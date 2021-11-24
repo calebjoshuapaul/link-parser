@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <body>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
   <h1>Link Parser</h1>
   <form action="javascript:void(0);">
     <label for="url">Enter url here:</label><br />
-    <input type="text" id="url" name="url" value="" /><br />
-    <input type="submit" value="Submit" />
+    <input type="url" required id="url" name="url" /><br />
+    <input id="fetchLinksBttn" type="submit" value="Submit" />
   </form>
   <section>
     <h2>Results:</h2>
@@ -12,4 +15,6 @@
       <!-- Links found on page -->
     </ul>
   </section>
+
+  <script src="./script.js"></script>
 </body>
