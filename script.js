@@ -9,7 +9,9 @@ const result = document.querySelector("#result-list");
 fetchLinksBttn.addEventListener("click", async function (event) {
   event.stopPropagation();
   const url = urlInput.value;
-  const response = await fetch("https://api.mapmyquest.net/?url=" + url);
+  const response = await fetch(
+    "https://link-parser-worker.calebjoshuapaul.workers.dev/?url=" + url
+  );
 
   let links = await response.json();
   result.innerHTML = getLinksListTemplate(links);
