@@ -18,7 +18,9 @@ fetchLinksBttn.addEventListener("click", async function (event) {
       console.error("Error:", error);
     });
 
-  result.innerHTML = getLinksListTemplate(response);
+  result.innerHTML = response.length
+    ? getLinksListTemplate(response)
+    : `No links were found`;
 });
 
 function getLinksListTemplate(links) {
