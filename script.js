@@ -11,10 +11,14 @@ fetchLinksBttn.addEventListener("click", async function (event) {
   const url = urlInput.value;
   const response = await fetch(
     "https://link-parser-worker.calebjoshuapaul.workers.dev/?url=" + url
-  );
+  )
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 
-  let links = await response.json();
-  result.innerHTML = getLinksListTemplate(links);
+  result.innerHTML = getLinksListTemplate(response);
 });
 
 function getLinksListTemplate(links) {
